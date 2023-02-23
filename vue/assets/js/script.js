@@ -17,7 +17,6 @@ $(document).ready(function() {
       var ville = data.name;
       var pays = data.sys.country;
       var description = data.weather[0].description;
-      var icone = `https://openweathermap.org/img/wn/${data.weather[0].icon}.png`;
       var temperature = Math.round(data.main.temp);
       var temp_max = Math.round(data.main.temp_max);
       var temp_min = Math.round(data.main.temp_min);
@@ -25,7 +24,6 @@ $(document).ready(function() {
       var vent = data.wind.speed;
       $(".city").text(`${ville}, ${pays}`);
       $(".desc").text(description);
-      $(".icon").attr("src", icone);
       $(".temp").text(`${temperature} °C`);
       $(".temp-max").text(`Max: ${temp_max} °C`);
       $(".temp-min").text(`Min: ${temp_min} °C`);
