@@ -23,22 +23,6 @@ $(document).ready(function() {
       var temp_min = Math.round(data.main.temp_min);
       var humidite = data.main.humidity;
       var vent = data.wind.speed;
-      var pression = data.main.pressure;
-      var uvindex = "";
-      if (data.current && data.current.uvi) {
-        uv = data.current.uvi;
-        if (uv <= 2) {
-            uvindex = "Faible";
-          } else if (uv <= 5) {
-            uvindex = "Modéré";
-          } else if (uv <= 7) {
-            uvindex = "Elevé";
-          } else if (uv <= 10) {
-            uvindex = "Très élevé";
-          } else {
-            uvindex = "Extrême";
-          }
-      }  
       $(".city").text(`${ville}, ${pays}`);
       $(".desc").text(description);
       $(".icon").attr("src", icone);
@@ -47,8 +31,6 @@ $(document).ready(function() {
       $(".temp-min").text(`Min: ${temp_min} °C`);
       $(".humidity").text(`Humidité: ${humidite}%`);
       $(".wind").text(`Vent: ${vent} km/h`);
-      $(".pressure").text(`Pression: ${pression} hPa`);
-      $(".uv-index").text(`Index UV: ${uvindex}`);
       // Afficher la section météo
       $(".meteo").show();
       });
