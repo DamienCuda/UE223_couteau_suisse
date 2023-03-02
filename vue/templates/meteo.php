@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
-    <?php include 'vue/templates/head.php'; ?>
+    <?= include 'head.php'; ?>
 <body>
 
   <div class="container mt-5">
@@ -21,7 +21,6 @@
         <h5 class="temp-min"></h5>
         <p class="humidity"></p>
         <p class="wind"></p>
-        <p class="uvindex"></p>
       </div>
     </div>
 
@@ -29,6 +28,3 @@
 
 </body>
 </html>
-
-
-
