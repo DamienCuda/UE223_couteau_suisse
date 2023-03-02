@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
-    <?= include 'vue/templates/head.php'; ?>
+    <?php include 'vue/templates/head.php'; ?>
 <body>
 
   <div class="container mt-5">

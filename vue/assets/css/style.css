@@ -1,13 +1,3 @@
-/* Reset */
-*, 
-*:after,
-*:before {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-
 /* Card styles */
 .card {
   margin-top: 40px;
@@ -82,4 +72,3 @@ html, body, .container-fluid {
   max-width: 600px;
   margin: 0 auto;    
 }
-  
