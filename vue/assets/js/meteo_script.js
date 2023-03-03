@@ -10,9 +10,10 @@ $(document).ready(function() {
   });
   
   function showMeteo(ville) {
-    var apikey = "keyhere";
-    var api = `https://api.openweathermap.org/data/2.5/weather?q=${ville}&units=metric&lang=fr&appid=${apikey}`;
-  
+    var apikey = "d03285e8a3101946586143a406fb4dee";
+    var api = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&lang=fr&appid=${apikey}`;
+
+
     $.getJSON(api, function(data) {
       var ville = data.name;
       var pays = data.sys.country;
