@@ -5,12 +5,16 @@
 const city_input = document.getElementById("autocomplete-container-city");
 const inputElement = document.querySelector('#city_input');
 const clearButton = document.querySelector('.clear-button');
-var input_data;
+let lon, lat;
 
 //Appelle
 addressAutocomplete(city_input, (data) => { 
-  input_data = data;
-  console.log(input_data);
+  if (data) {
+    lon = data.geometry.coordinates[0];
+    lat = data.geometry.coordinates[1];
+    localStorage.setItem('lon', lon);
+    localStorage.setItem('lat', lat);
+  }
 },
 {
     placeholder: "Entrez une ville"
@@ -199,5 +203,3 @@ function addressAutocomplete(containerElement, callback, options) {
     });
   
 }
- 
-
