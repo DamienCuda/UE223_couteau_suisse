@@ -14,12 +14,16 @@ const main_clear_button = document.querySelector('#main_clear_button');
 
 //Appelles
 addressAutocomplete(index_input_element, index_city_input, index_clear_button, (data) => { 
-  let lon, lat;
+  let lon, lat, timezone;
   if (data) {
     lat = data.geometry.coordinates[0];
     lon = data.geometry.coordinates[1];
     localStorage.setItem('lon', lon);
     localStorage.setItem('lat', lat);
+    timezone = data.properties.timezone.name;
+    localStorage.setItem('timezone', timezone);
+    console.log(data);
+    console.log(timezone);
   }
 },
 {
