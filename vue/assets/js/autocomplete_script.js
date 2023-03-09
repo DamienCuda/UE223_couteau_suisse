@@ -2,13 +2,32 @@
 //Le code est celui recommandé par L'API Geoapify et adapté au besoin du projet
 
 // Déclaration
-const city_input = document.getElementById("autocomplete-container-city");
-const inputElement = document.querySelector('#city_input');
-const clearButton = document.querySelector('.clear-button');
-let lon, lat;
+const index_city_input = document.querySelector("#index_autocomplete_container_city");
+const index_input_element = document.querySelector('#index_city_input');
+const index_clear_button = document.querySelector('#index_clear_button');
 
-//Appelle
-addressAutocomplete(city_input, (data) => { 
+const main_city_input = document.querySelector("#main_autocomplete_container_city");
+const main_input_element = document.querySelector('#main_city_input');
+const main_clear_button = document.querySelector('#main_clear_button');
+
+
+
+//Appelles
+addressAutocomplete(index_input_element, index_city_input, index_clear_button, (data) => { 
+  let lon, lat;
+  if (data) {
+    lon = data.geometry.coordinates[0];
+    lat = data.geometry.coordinates[1];
+    localStorage.setItem('lon', lon);
+    localStorage.setItem('lat', lat);
+  }
+},
+{
+    placeholder: "Entrez une ville"
+});
+
+addressAutocomplete(main_input_element, main_city_input, main_clear_button, (data) => {
+  let lon, lat;
   if (data) {
     lon = data.geometry.coordinates[0];
     lat = data.geometry.coordinates[1];
@@ -23,7 +42,7 @@ addressAutocomplete(city_input, (data) => {
 
 //Fonction
 
-function addressAutocomplete(containerElement, callback, options) {
+function addressAutocomplete(inputElement, containerElement, clearButton, callback, options) {
     /* 
       The addressAutocomplete takes as parameters:
       - a container element (div)
