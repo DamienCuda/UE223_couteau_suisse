@@ -16,8 +16,8 @@ const main_clear_button = document.querySelector('#main_clear_button');
 addressAutocomplete(index_input_element, index_city_input, index_clear_button, (data) => { 
   let lon, lat;
   if (data) {
-    lon = data.geometry.coordinates[0];
-    lat = data.geometry.coordinates[1];
+    lat = data.geometry.coordinates[0];
+    lon = data.geometry.coordinates[1];
     localStorage.setItem('lon', lon);
     localStorage.setItem('lat', lat);
   }
