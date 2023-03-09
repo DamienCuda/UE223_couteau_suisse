@@ -10,18 +10,7 @@
       <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
       <title>La météo</title>
   </head>
-  <body>
-
-    <div class="container mt-5">
-
-      <div class="card p-3 mx-auto" style="max-width: 600px;">
-        <h1 class="card-title text-center mb-3">Météo</h1>
-
-        <div class="input-group mb-3">
-          <input type="text" id="city-input" class="form-control" placeholder="Entrez une ville" aria-label="Entrez une ville">
-          <button class="btn btn-primary" id="search-button" type="button">Rechercher</button>
-        </div>
-
+    <body>
         <div class="card-body text-center">
           <h2 class="city"></h2>
           <h3 class="desc"></h3>
@@ -31,9 +20,5 @@
           <p class="humidity"></p>
           <p class="wind"></p>
         </div>
-      </div>
-
-    </div>
-
-  </body>
+    </body>
 </html>
