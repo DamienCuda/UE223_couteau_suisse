@@ -2,35 +2,17 @@
 //Le code est celui recommandé par L'API Geoapify et adapté au besoin du projet
 
 // Déclaration
-const index_city_input = document.querySelector("#index_autocomplete_container_city");
-const index_input_element = document.querySelector('#index_city_input');
-const index_clear_button = document.querySelector('#index_clear_button');
-
-const main_city_input = document.querySelector("#main_autocomplete_container_city");
-const main_input_element = document.querySelector('#main_city_input');
-const main_clear_button = document.querySelector('#main_clear_button');
+const input_container = document.querySelector('#index_input');
+const input = document.querySelector('#index_input_container');
+const clear_button = document.querySelector('#index_clear_button');
 
 
-
-//Appelles
-addressAutocomplete(index_input_element, index_city_input, index_clear_button, (data) => { 
+//Appel//
+addressAutocomplete(input_container, input, clear_button, (data) => { 
   let lon, lat;
   if (data) {
-    lat = data.geometry.coordinates[0];
-    lon = data.geometry.coordinates[1];
-    localStorage.setItem('lon', lon);
-    localStorage.setItem('lat', lat);
-  }
-},
-{
-    placeholder: "Entrez une ville"
-});
-
-addressAutocomplete(main_input_element, main_city_input, main_clear_button, (data) => {
-  let lon, lat;
-  if (data) {
-    lon = data.geometry.coordinates[0];
     lat = data.geometry.coordinates[1];
+    lon = data.geometry.coordinates[0];
     localStorage.setItem('lon', lon);
     localStorage.setItem('lat', lat);
   }
@@ -40,8 +22,7 @@ addressAutocomplete(main_input_element, main_city_input, main_clear_button, (dat
 });
 
 
-//Fonction
-
+//Fonction//
 function addressAutocomplete(inputElement, containerElement, clearButton, callback, options) {
     /* 
       The addressAutocomplete takes as parameters:
