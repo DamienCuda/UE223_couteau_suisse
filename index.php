@@ -13,7 +13,7 @@
     <body id="index_body">
         <main class="search_container">
             <h1>Vous allez où ?</h1>
-            <form id="homepage_form" action="vue/templates/meteo.php" method="post">
+            <form id="homepage_form" action="vue/templates/main.php" method="post">
                 <fieldset class="autocomplete-container" id="index_input_container">
                     <label for="index_city_input" hidden="true"></label>
                     <input type="text" id="index_input" placeholder="Entrez une ville" autocomplete="off"/>

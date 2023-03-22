@@ -9,17 +9,16 @@ const clear_button = document.querySelector('#index_clear_button');
 
 //Appel//
 addressAutocomplete(input_container, input, clear_button, (data) => { 
-  let lon, lat;
-  if (data) {
-    lat = data.geometry.coordinates[1];
-    lon = data.geometry.coordinates[0];
-    localStorage.setItem('lon', lon);
-    localStorage.setItem('lat', lat);
+
+  if (data) { 
+    // passage des données au localStorage pour utilisation sur la page main
+    obj = JSON.stringify(data)
+    localStorage.setItem('data', obj);
   }
-},
-{
-    placeholder: "Entrez une ville"
-});
+  },
+  {
+      placeholder: "Entrez une ville"
+  });
 
 
 //Fonction//
