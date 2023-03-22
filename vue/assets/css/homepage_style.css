@@ -1,9 +1,17 @@
+*, *::before, *::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 :root{
     --cl-white : #fff;
     --cl-pink : hotpink;
     --cl-black : #333;
-
 }
+
+
+
 #index_body {
     font-family: system-ui, sans-serif;
     color: var(--cl-white) !important;
@@ -30,7 +38,7 @@
     border: none;
 }
 
-#index_city_input {
+#index_input {
     width: 100%;
     outline: 3px solid var(--cl-pink);
     border: none;
@@ -40,7 +48,7 @@
     background-color: transparent;
     color: var(--cl-white);
 }
-#index_city_input::-webkit-input-placeholder{
+#index_input::-webkit-input-placeholder{
     color: var(--cl-white);
 }
 
