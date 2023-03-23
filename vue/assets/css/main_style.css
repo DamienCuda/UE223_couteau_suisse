@@ -1,3 +1,4 @@
+/* Light reset */
 *, *::before, *::after{
   box-sizing: border-box;
   margin: 0;
@@ -5,9 +6,10 @@
 }
 
 /* General styles */
-
-html, body, .container-fluid {
-  height: 100%;
+:root{
+  --cl-white : #fff;
+  --cl-pink : hotpink;
+  --cl-black : #333;
 }
 
 body {
@@ -16,32 +18,15 @@ body {
   font-family: 'Lato', sans-serif;
 }
 
-h1 {
-  font-size: 48px;
-  font-weight: bold;
-}
-
-.container {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  max-width: 600px;
-  margin: 0 auto;    
-}
-
-:root{
-  --cl-white : #fff;
-  --cl-pink : hotpink;
-  --cl-black : #333;
-}
-
 #navbar{
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 2em;
-  background-color: lightgrey;
+}
+
+#hero{
+  padding-block: 3rem;
 }
 .title{
   font-size: 2.5rem;
@@ -59,6 +44,7 @@ h1 {
   border-radius: .8em;
   font-size: 1.2rem;
   font-weight: 600;
+  width: 400px;
 }
 
 #go_btn{
@@ -91,6 +77,8 @@ h1 {
   border-radius: 10px;
   text-align: left;
   color: var(--cl-black);
+  width: 80%;
+  transform: translateX(35px);
 }
 
 .autocomplete-items div {
@@ -110,12 +98,13 @@ h1 {
   background-color: rgba(0, 0, 0, 0.1);
 }
 .clear-button {
-  color: var(--cl-white);
+  color: var(--cl-black);
   opacity: 0.7;
   cursor: pointer;
   position: absolute;
   right: 20px;
   top: 0;
+  right: 12%;
   height: 100%;
   display: none;
   align-items: center;
@@ -129,16 +118,25 @@ h1 {
 }
 
 
-/* Card styles */
-.card {
-  margin-top: 40px;
-  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
-  border: none;
-  border-radius: 10px;
+/* Weather section*/
+#hero_subsection{
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 3rem;
+  margin: 3rem;
+  justify-items: center;
 }
 
-.card-body {
+.weather_card{
+  padding: 2rem;
+  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
   text-align: center;
+  max-width: 20rem;
+}
+
+.weather_card p{
+  margin-bottom: 0;
 }
 
 .card-text {
@@ -150,14 +148,22 @@ h1 {
   max-width: 150px;
 }
 
+.city{
+  font-size: 1.7rem;
+  font-weight: bold;
+}
+.desc{
+  font-size: 1.2rem;
+  font-weight: 700;
+}
 .temp {
-  font-size: 80px;
+  font-size: 4rem;
   font-weight: bold;
 }
 
 .temp-max,
 .temp-min {
-  font-size: 24px;
+  font-size: 1.2rem;
   font-weight: bold;
 }
 
@@ -178,4 +184,98 @@ h1 {
 
 #city-input:focus {
   outline: none;
+}
+
+/* Hotel Card */
+
+#hotel_container{
+  margin-block: 2.5rem;
+}
+#hotel{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.hotel_card{
+  display: grid;
+  grid-template-rows: 50% 1fr;
+  gap: 1rem;
+  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  border-radius: 10px;
+  transition: all 0.2s ease-in-out;
+}
+.hotel_card:hover{
+  scale: 1.1;
+}
+.hotel_card:not(:hover){
+  opacity: 0.7;
+}
+.hotel_img{
+  width: 100%;
+  object-fit: cover;
+  height: 100%;
+}
+
+.hotel_info{
+  padding: 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hotel_details{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hotel_name{
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+.hotel_adress{
+  font-style: italic;
+  font-weight: lighter;
+  color: var(--cl-black);
+}
+
+.hotel_price{
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: var(--cl-pink);
+}
+
+.hotel_btn{
+  border: 1px solid var(--cl-pink);
+  color: var(--cl-pink);
+  border-radius: 10px;
+  position: relative;
+  background-color: transparent;
+  padding: 0.5rem 1rem;
+  overflow: hidden;
+}
+.hotel_btn::after{
+  content: "";
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background-color: var(--cl-pink);
+  transition: all 0.2s ease-in;
+}
+.hotel_btn:hover::after{
+  width: 100%;
+}
+.hotel_btn:hover{
+  color: var(--cl-white);
+}
+
+footer{
+  padding: 2.5rem;
+  background-color: #eeeeee;
 }

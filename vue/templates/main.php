@@ -9,12 +9,13 @@
       <script src="../assets/js/main_script.js" defer></script>
       <script src="../assets/js/autocomplete_script.js" defer></script>
       <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+      <script src="../assets/js/hotel_script.js" defer></script>
       <title>La météo</title>
   </head>
   <body>
 
     <header id="navbar">
-      <div class="title">Votre couteau suisse voyage</div>
+      <h1 class="title">Votre couteau suisse voyage</h1>
       <nav id="main_nav">
         <form id="main_form" action="#" method="post">
             <fieldset class="autocomplete-container" id="index_input_container">
@@ -29,33 +30,35 @@
 
     <main>
 
-      <section id="hero">
-        <div class="card-body text-center">
-          <h2 class="city"></h2>
-          <h3 class="desc"></h3>
-          <h1 class="temp"></h1>
-          <h5 class="temp-max"></h5>
-          <h5 class="temp-min"></h5>
-          <p class="humidity"></p>
-          <p class="wind"></p>
+      <section id="hero" class="container">
+        <h2 class="section_title">Météo et heure locale</h2>
+        <div id="hero_subsection">
+          <article class="weather_card">
+            <p class="city"></p>
+            <p class="desc"></p>
+            <p class="temp"></p>
+            <p class="temp-max"></p>
+            <p class="temp-min"></p>
+            <p class="humidity"></p>
+            <p class="wind"></p>
+          </article>
+
+          <div id="heure">
+
+          </div>
         </div>
+      </section>
 
-        <div id="heure">
+      <section id="hotel_container" class="container">
+        <h2 class="section_title">Les hôtels</h2>
+        <div id="hotel">
 
         </div>
       </section>
-
-      <section id="vol">
-
-      </section>
-
-      <section id="hotel">
-
-      </section>
-
-
-
     </main>
+    <footer>
+      <p class="text-center"> Jospin Mbuyi Kambemba - Damien Cuda & Julien Biechler</p>
+    </footer>
     
   </body>
 </html>
