@@ -9,6 +9,7 @@
       <script src="../assets/js/main_script.js" defer></script>
       <script src="../assets/js/autocomplete_script.js" defer></script>
       <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+      <script src="../assets/js/hotel_script.js" defer></script>
       <title>La météo</title>
   </head>
   <body>
@@ -48,19 +49,16 @@
         </div>
       </section>
 
-      <section id="vol" class="container">
-        <h2 class="section_title">Les vols</h2>
-
-      </section>
-
-      <section id="hotel" class="container">
+      <section id="hotel_container" class="container">
         <h2 class="section_title">Les hôtels</h2>
+        <div id="hotel">
 
+        </div>
       </section>
-
-
-
     </main>
+    <footer>
+      <p class="text-center"> Jospin Mbuyi Kambemba - Damien Cuda & Julien Biechler</p>
+    </footer>
     
   </body>
 </html>

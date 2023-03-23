@@ -185,3 +185,97 @@ body {
 #city-input:focus {
   outline: none;
 }
+
+/* Hotel Card */
+
+#hotel_container{
+  margin-block: 2.5rem;
+}
+#hotel{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.hotel_card{
+  display: grid;
+  grid-template-rows: 50% 1fr;
+  gap: 1rem;
+  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  border-radius: 10px;
+  transition: all 0.2s ease-in-out;
+}
+.hotel_card:hover{
+  scale: 1.1;
+}
+.hotel_card:not(:hover){
+  opacity: 0.7;
+}
+.hotel_img{
+  width: 100%;
+  object-fit: cover;
+  height: 100%;
+}
+
+.hotel_info{
+  padding: 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hotel_details{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hotel_name{
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+.hotel_adress{
+  font-style: italic;
+  font-weight: lighter;
+  color: var(--cl-black);
+}
+
+.hotel_price{
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: var(--cl-pink);
+}
+
+.hotel_btn{
+  border: 1px solid var(--cl-pink);
+  color: var(--cl-pink);
+  border-radius: 10px;
+  position: relative;
+  background-color: transparent;
+  padding: 0.5rem 1rem;
+  overflow: hidden;
+}
+.hotel_btn::after{
+  content: "";
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background-color: var(--cl-pink);
+  transition: all 0.2s ease-in;
+}
+.hotel_btn:hover::after{
+  width: 100%;
+}
+.hotel_btn:hover{
+  color: var(--cl-white);
+}
+
+footer{
+  padding: 2.5rem;
+  background-color: #eeeeee;
+}
